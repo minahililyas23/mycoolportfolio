@@ -1,0 +1,39 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="560" height="660" viewBox="0 0 560 660" role="img" aria-labelledby="portrait-title portrait-desc">
+  <title id="portrait-title">Minahil Ilyas — portrait placeholder</title>
+  <desc id="portrait-desc">An original abstract human silhouette inside an arch, with MI initials, a lilac grid and soft green geometric accents. This is a placeholder, not a photograph.</desc>
+  <defs>
+    <pattern id="portrait-grid" width="44" height="44" patternUnits="userSpaceOnUse">
+      <path d="M44 0H0V44" fill="none" stroke="#183f35" stroke-opacity=".09" stroke-width="1"/>
+    </pattern>
+    <clipPath id="portrait-arch">
+      <path d="M92 564V272C92 168.17 176.17 84 280 84s188 84.17 188 188v292Z"/>
+    </clipPath>
+  </defs>
+  <path fill="#ded2ef" d="M0 0h560v660H0z"/>
+  <path fill="url(#portrait-grid)" d="M0 0h560v660H0z"/>
+  <circle cx="467" cy="116" r="43" fill="#d3ecac"/>
+  <path d="M92 564V272C92 168.17 176.17 84 280 84s188 84.17 188 188v292Z" fill="#f8f7f1" stroke="#183f35" stroke-width="1.5"/>
+  <g clip-path="url(#portrait-arch)">
+    <circle cx="280" cy="288" r="132" fill="#e7eadc"/>
+    <circle cx="280" cy="288" r="110" fill="none" stroke="#183f35" stroke-opacity=".17" stroke-width="1"/>
+    <path d="M126 586v-43c0-62 29-104 91-119l63-17 63 17c62 15 91 57 91 119v43Z" fill="#183f35"/>
+    <path d="M252 358h56v64l-28 31-28-31Z" fill="#a9bea0"/>
+    <path d="M210 281c0-56 27-91 70-91s70 35 70 91v25c0 55-30 93-70 93s-70-38-70-93Z" fill="#bdcdb0"/>
+    <path d="M208 295c-12-72 19-123 73-123 43 0 76 33 76 91 0 17-2 32-7 46l-8-41c-35 0-73-21-92-44-4 30-20 56-42 71Z" fill="#183f35"/>
+    <path d="m252 416 28 37-35 52-37-77Zm56 0-28 37 35 52 37-77Z" fill="#d3ecac"/>
+    <path d="M280 454v132" fill="none" stroke="#f8f7f1" stroke-opacity=".3" stroke-width="1.5"/>
+    <path d="M164 545c38-12 76-18 116-18s78 6 116 18" fill="none" stroke="#f8f7f1" stroke-opacity=".12" stroke-width="1.5"/>
+  </g>
+  <path d="M92 564h376" fill="none" stroke="#183f35" stroke-width="1.5"/>
+  <g fill="none" stroke="#183f35" stroke-width="1.5">
+    <path d="M43 42h24m-12-12v24"/>
+    <path d="M493 586h24m-12-12v24"/>
+    <path d="M47 554v25h25"/>
+  </g>
+  <g transform="translate(433 424)">
+    <circle r="49" fill="#d3ecac" stroke="#183f35" stroke-width="1.5"/>
+    <path d="m-24 16 4-32 11 19 11-19 4 32M18-16v32m-6-32h12m-12 32h12" fill="none" stroke="#183f35" stroke-width="2.5" stroke-linecap="square" stroke-linejoin="miter"/>
+  </g>
+  <path d="M93 604h83m11 0h14" fill="none" stroke="#183f35" stroke-width="1.5"/>
+  <circle cx="462" cy="604" r="4" fill="#183f35"/>
+</svg>
