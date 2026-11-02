@@ -4,6 +4,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="description" content="Meet Minahil Ilyas, a Year 2 Information Technology student at the University of Hertfordshire.">
+  <meta name="theme-color" content="#183f35">
   <title>About me · Minahil Ilyas</title>
   <link rel="icon" href="assets/images/favicon.svg" type="image/svg+xml">
   <link rel="stylesheet" href="assets/css/styles.css">
@@ -12,44 +13,57 @@
   <a class="skip-link" href="#main">Skip to content</a>
   <header class="site-header">
     <div class="container header-inner">
-      <a class="wordmark" href="index.html">Minahil Ilyas</a>
+      <a class="wordmark" href="index.html">minahil<span>.</span></a>
       <nav aria-label="Main navigation">
-        <a href="#about">About me</a>
-        <a href="#studies">My studies</a>
-        <a href="#goals">My goals</a>
+        <a href="index.html" aria-current="page">About me</a>
+        <a href="interests.html">Interests</a>
       </nav>
     </div>
   </header>
-  <main id="main" class="container" tabindex="-1">
-    <section id="about" class="intro" aria-labelledby="about-heading">
+  <main id="main" tabindex="-1">
+    <section class="hero container" aria-labelledby="home-heading">
       <div>
-        <p class="eyebrow">Information Technology student</p>
-        <h1 id="about-heading">Hello, I’m<br>Minahil Ilyas.</h1>
-        <p class="lead">I’m a second-year student at the University of Hertfordshire, building my foundations in technology.</p>
-        <p>I enjoy learning how websites and programs work. This is a space to introduce myself and share the interests I’m developing through my studies.</p>
-        <a class="button" href="#studies">Explore my studies</a>
+        <p class="eyebrow">A student. A learner. A work in progress.</p>
+        <h1 id="home-heading">Curious mind.<br><em>Thoughtful code.</em></h1>
+        <p class="lead">Hello, I’m <strong>Minahil Ilyas.</strong> A second-year Information Technology student exploring how good code can make everyday experiences better.</p>
+        <a class="button" href="interests.html">Explore my interests <span aria-hidden="true">→</span></a>
+        <p class="hero-note">Learning at the University of Hertfordshire</p>
       </div>
       <figure class="portrait">
-        <img src="assets/images/portrait-placeholder.svg" width="560" height="660" alt="Illustrated portrait placeholder with the initials MI">
-        <figcaption>Minahil Ilyas · portrait placeholder</figcaption>
+        <img src="assets/images/minahil-ilyas-portrait.png" width="1122" height="1402" alt="Portrait of Minahil Ilyas">
+        <figcaption><strong>Minahil Ilyas</strong><span>IT student &amp; curious builder</span></figcaption>
       </figure>
     </section>
-    <section id="studies" class="section" aria-labelledby="studies-heading">
-      <p class="eyebrow">My studies</p>
-      <h2 id="studies-heading">Building a foundation.</h2>
-      <dl class="study-details">
-        <div><dt>Award</dt><dd>Information Technology</dd></div>
-        <div><dt>University</dt><dd>University of Hertfordshire</dd></div>
-        <div><dt>Year of study</dt><dd>Year 2</dd></div>
+    <section class="study-strip" aria-label="My studies">
+      <dl class="container study-details">
+        <div><dt>01 / Studying</dt><dd>Information Technology</dd></div>
+        <div><dt>02 / University</dt><dd>University of Hertfordshire</dd></div>
+        <div><dt>03 / Year of study</dt><dd>Year 2</dd></div>
       </dl>
-      <p>My studies include Java, HTML and CSS, alongside programming ideas such as functions, operators and loops. I’m also learning about the DOM, semantic HTML, ARIA and accessibility APIs.</p>
     </section>
-    <section id="goals" class="section" aria-labelledby="goals-heading">
-      <p class="eyebrow">Looking ahead</p>
-      <h2 id="goals-heading">Learning through practice.</h2>
-      <p>I’m interested in a placement where I can apply what I’m learning, contribute to useful work and develop my skills with an experienced team. I want to understand how technical decisions affect the people using a website or application.</p>
+    <section class="container about-section" aria-labelledby="about-heading">
+      <div><p class="eyebrow">A little about me</p><h2 id="about-heading">The person<br>behind the <em>code.</em></h2></div>
+      <div>
+        <p class="lead">I’m interested in the space where technology meets the people who use it.</p>
+        <p>My studies bring together Java, HTML and CSS, and JavaScript fundamentals such as functions, operators, loops and the DOM. I’m learning how these building blocks become clear, useful digital experiences.</p>
+        <p>I’m also exploring semantic HTML, ARIA and accessibility APIs. Thinking about how different people use a website helps me approach both its structure and its behaviour more thoughtfully.</p>
+        <p>I’m looking for a placement where I can put these foundations into practice, learn from an experienced team and keep asking better questions.</p>
+      </div>
+    </section>
+    <section class="interest-preview" aria-labelledby="interests-heading">
+      <div class="container">
+        <p class="eyebrow">Following my curiosity</p><h2 id="interests-heading">Three things I’m <em>drawn to.</em></h2>
+        <div class="interest-links">
+          <a href="interests.html#web"><span class="number">01</span><span><strong>Interactive web experiences</strong><small>HTML, CSS, JavaScript &amp; the DOM</small></span><span aria-hidden="true">↗</span></a>
+          <a href="interests.html#accessibility"><span class="number">02</span><span><strong>Accessibility &amp; inclusive design</strong><small>Semantics, ARIA &amp; accessibility APIs</small></span><span aria-hidden="true">↗</span></a>
+          <a href="interests.html#systems"><span class="number">03</span><span><strong>Programming &amp; connected systems</strong><small>Java, logic &amp; client–server thinking</small></span><span aria-hidden="true">↗</span></a>
+        </div>
+      </div>
     </section>
   </main>
-  <footer class="site-footer container"><p>© 2026 Minahil Ilyas</p><a href="#main">Back to top</a></footer>
+  <footer class="site-footer container">
+    <div><a class="wordmark" href="index.html">minahil<span>.</span></a><p>Information Technology · University of Hertfordshire</p></div>
+    <div><p>© 2026 Minahil Ilyas</p><a href="#main">Back to top</a></div>
+  </footer>
 </body>
 </html>

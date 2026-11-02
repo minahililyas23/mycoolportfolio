@@ -1,0 +1,45 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="800" height="520" viewBox="0 0 800 520" role="img" aria-labelledby="access-title access-desc">
+  <title id="access-title">Accessibility and inclusive design</title>
+  <desc id="access-desc">An original illustration combining a person symbol, keyboard controls, clear type and a highlighted focus outline.</desc>
+  <defs>
+    <pattern id="access-grid" width="40" height="40" patternUnits="userSpaceOnUse">
+      <path d="M40 0H0V40" fill="none" stroke="#183f35" stroke-opacity=".06" stroke-width="1"/>
+    </pattern>
+  </defs>
+  <path fill="#e7ddf1" d="M0 0h800v520H0z"/>
+  <path fill="url(#access-grid)" d="M0 0h800v520H0z"/>
+  <rect x="97" y="70" width="606" height="337" rx="16" fill="#f8f7f1" stroke="#183f35" stroke-width="1.5"/>
+  <path d="M97 112h606" fill="none" stroke="#183f35" stroke-width="1.5"/>
+  <circle cx="122" cy="91" r="4" fill="#183f35"/>
+  <circle cx="138" cy="91" r="4" fill="#183f35" opacity=".45"/>
+  <path d="M602 91h73" fill="none" stroke="#183f35" stroke-width="1.5"/>
+  <circle cx="307" cy="244" r="100" fill="#d3ecac"/>
+  <circle cx="307" cy="244" r="83" fill="none" stroke="#183f35" stroke-opacity=".2" stroke-width="1.5"/>
+  <circle cx="307" cy="201" r="16" fill="#183f35"/>
+  <path d="M307 230v37m-51-42 51 12 51-12m-51 42-30 37m30-37 30 37" fill="none" stroke="#183f35" stroke-width="11" stroke-linecap="round" stroke-linejoin="round"/>
+  <rect x="469" y="150" width="179" height="88" rx="8" fill="#e9eedf"/>
+  <text x="492" y="210" fill="#183f35" font-family="Georgia, serif" font-size="57" letter-spacing="-4">Aa</text>
+  <path d="m603 178 14 14-14 14m14-14h-25" fill="none" stroke="#183f35" stroke-width="2"/>
+  <rect x="462" y="262" width="193" height="65" rx="10" fill="none" stroke="#183f35" stroke-width="2" stroke-dasharray="4 4"/>
+  <rect x="469" y="269" width="179" height="51" rx="6" fill="#183f35"/>
+  <path d="M489 294h81m45-7 7 7-7 7m-20-7h27" fill="none" stroke="#f8f7f1" stroke-width="2"/>
+  <path d="M469 350h156m-156 13h101" fill="none" stroke="#183f35" stroke-opacity=".2" stroke-width="5" stroke-linecap="round"/>
+  <path d="M155 248c0-84 68-152 152-152" fill="none" stroke="#183f35" stroke-width="1.5" stroke-dasharray="3 6"/>
+  <path d="m145 239 10 10 10-10" fill="none" stroke="#183f35" stroke-width="1.5"/>
+  <rect x="155" y="379" width="489" height="77" rx="12" fill="#183f35"/>
+  <rect x="167" y="390" width="76" height="43" rx="6" fill="#d3ecac"/>
+  <text x="185" y="417" fill="#183f35" font-family="Arial, sans-serif" font-size="17">Tab</text>
+  <g fill="#f8f7f1">
+    <rect x="253" y="390" width="43" height="43" rx="6"/>
+    <rect x="306" y="390" width="43" height="43" rx="6"/>
+    <rect x="359" y="390" width="43" height="43" rx="6"/>
+    <rect x="412" y="390" width="106" height="43" rx="6"/>
+    <rect x="528" y="390" width="43" height="43" rx="6"/>
+    <rect x="581" y="390" width="51" height="43" rx="6"/>
+  </g>
+  <g fill="none" stroke="#183f35" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M269 407h11m-11 8h11M322 407h11m-11 8h11M375 407h11m-11 8h11M439 415h52m-52-4v4m52-4v4M549 403v15m-5-5 5 5 5-5M614 403v9h-14m5-5-5 5 5 5"/>
+  </g>
+  <path d="M56 346h22m-11-11v22M719 171h22m-11-11v22" fill="none" stroke="#183f35" stroke-width="1.5"/>
+  <circle cx="74" cy="68" r="5" fill="#183f35"/>
+</svg>
