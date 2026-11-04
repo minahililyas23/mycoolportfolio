@@ -1,0 +1,14 @@
+{
+  "name": "minahil-ilyas-portfolio",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "description": "An original HTML, CSS and vanilla JavaScript student portfolio.",
+  "engines": { "node": ">=22.13.0" },
+  "scripts": {
+    "dev": "node scripts/dev.mjs",
+    "start": "node scripts/dev.mjs",
+    "build": "node scripts/build.mjs",
+    "check": "node scripts/check.mjs"
+  }
+}

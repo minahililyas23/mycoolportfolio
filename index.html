@@ -11,13 +11,16 @@
   <title>About me · Minahil Ilyas</title>
   <link rel="icon" href="assets/images/favicon.svg" type="image/svg+xml">
   <link rel="stylesheet" href="assets/css/styles.css">
+  <script src="assets/js/main.js" defer></script>
 </head>
 <body>
   <a class="skip-link" href="#main">Skip to content</a>
   <header class="site-header">
     <div class="header-inner">
       <a class="wordmark" href="index.html" aria-label="Minahil Ilyas — home"><span class="brand-flower" aria-hidden="true">✳</span> minahil<span class="wordmark-dot">.</span></a>
-      <nav id="primary-nav" class="primary-nav" aria-label="Main navigation"><a href="index.html" aria-current="page">About me</a><a href="interests.html">Interests</a><a href="portfolio.html">Portfolio</a></nav>
+      <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="primary-nav" hidden>Menu <span aria-hidden="true">☰</span></button>
+      <nav id="primary-nav" class="primary-nav" aria-label="Main navigation"><a href="index.html" aria-current="page">About me</a><a href="interests.html">Interests</a><a href="portfolio.html">Portfolio</a><a href="contact.html">Contact</a></nav>
+      <a class="header-cta" href="contact.html">Let’s talk <span aria-hidden="true">↗</span></a>
     </div>
   </header>
   <main id="main" tabindex="-1">
@@ -38,7 +41,7 @@
     <section class="study-strip" aria-label="My studies"><div class="container study-grid"><div><span class="label">01 / Studying</span><strong>Information Technology</strong></div><div><span class="label">02 / University</span><strong>University of Hertfordshire</strong></div><div><span class="label">03 / Where I am</span><strong>Year 2 <span class="small-note">&amp; building foundations</span></strong></div></div></section>
     <section class="container about-section" aria-labelledby="about-heading">
       <div><p class="eyebrow">A little about me</p><h2 id="about-heading">The person<br>behind the <em>code.</em></h2><span class="drawn-star" aria-hidden="true">✳</span></div>
-      <div class="about-copy"><p class="large-copy">I’m interested in the space where technology meets the people who use it.</p><p>My studies bring together Java, HTML and CSS, and JavaScript fundamentals such as functions, operators, loops and the DOM. I’m learning how these building blocks become clear, useful digital experiences.</p><p>I’m also exploring semantic HTML, ARIA and accessibility APIs. Thinking about how different people use a website helps me approach both its structure and its behaviour more thoughtfully.</p><p>I’m looking for a placement where I can put these foundations into practice, learn from an experienced team and keep asking better questions.</p><a class="text-link" href="portfolio.html">Explore my portfolio <span aria-hidden="true">↗</span></a></div>
+      <div class="about-copy"><p class="large-copy">I’m interested in the space where technology meets the people who use it.</p><p>My studies bring together Java, HTML and CSS, and JavaScript fundamentals such as functions, operators, loops and the DOM. I’m learning how these building blocks become clear, useful digital experiences.</p><p>I’m also exploring semantic HTML, ARIA and accessibility APIs. Thinking about how different people use a website helps me approach both its structure and its behaviour more thoughtfully.</p><p>I’m looking for a placement where I can put these foundations into practice, learn from an experienced team and keep asking better questions.</p><a class="text-link" href="contact.html">Have an opportunity in mind? <span aria-hidden="true">↗</span></a></div>
     </section>
     <section class="interest-preview section-tint"><div class="container"><div class="section-heading"><div><p class="eyebrow">Following my curiosity</p><h2>Three things I’m<br><em>drawn to.</em></h2></div><a class="text-link" href="interests.html">Explore my interests <span aria-hidden="true">↗</span></a></div><div class="interest-links">
       <a href="interests.html#web"><span class="index">01</span><span><strong>Interactive web experiences</strong><small>HTML, CSS, JavaScript &amp; the DOM</small></span><span class="round-arrow" aria-hidden="true">↗</span></a>
@@ -46,11 +49,12 @@
       <a href="interests.html#systems"><span class="index">03</span><span><strong>Programming &amp; connected systems</strong><small>Java, logic &amp; client–server thinking</small></span><span class="round-arrow" aria-hidden="true">↗</span></a>
     </div></div></section>
     <section class="container home-work"><div class="section-heading"><div><p class="eyebrow">Making room for ideas</p><h2>A portfolio<br><em>taking shape.</em></h2></div><p class="section-aside">One website, a few project ideas,<br>and plenty of room to grow.</p></div>
-      <a class="home-project" href="projects/profile-site.html"><div class="home-project-art" aria-hidden="true"><div class="mini-browser"><div class="mini-toolbar"><i></i><i></i><i></i><span>minahil / portfolio</span></div><div class="mini-page"><div><small>HELLO, I’M MINAHIL.</small><strong>Curious mind.<br><em>Thoughtful code.</em></strong><span class="mini-pill">Explore my work ↗</span></div><div class="mini-portrait">mi<span>✳</span></div></div></div></div><div class="home-project-info"><span class="label">01 / The site you’re exploring</span><h3>My profile website</h3><p>A personal space to introduce my interests and bring future work together.</p><span class="tag-row"><span class="tag">HTML &amp; CSS</span><span class="tag">Project pages</span></span><span class="text-link">See the project <span aria-hidden="true">↗</span></span></div></a>
+      <a class="home-project" href="projects/profile-site.html"><div class="home-project-art" aria-hidden="true"><div class="mini-browser"><div class="mini-toolbar"><i></i><i></i><i></i><span>minahil / portfolio</span></div><div class="mini-page"><div><small>HELLO, I’M MINAHIL.</small><strong>Curious mind.<br><em>Thoughtful code.</em></strong><span class="mini-pill">Explore my work ↗</span></div><div class="mini-portrait">mi<span>✳</span></div></div></div></div><div class="home-project-info"><span class="label">01 / The site you’re exploring</span><h3>My profile website</h3><p>A personal space to introduce my interests and bring future work together.</p><span class="tag-row"><span class="tag">HTML &amp; CSS</span><span class="tag">JavaScript</span></span><span class="text-link">See the project <span aria-hidden="true">↗</span></span></div></a>
     </section>
+    <section class="container"><div class="contact-band"><div><p class="eyebrow">The next chapter</p><h2>Good things start<br>with a <em>conversation.</em></h2></div><a class="button button-light" href="contact.html">Get in touch <span aria-hidden="true">↗</span></a><span class="band-flower" aria-hidden="true">✳</span></div></section>
   </main>
   <footer class="site-footer">
-    <div class="footer-top"><a class="wordmark" href="index.html">minahil<span class="wordmark-dot">.</span></a><p>A little curiosity. A lot to explore.</p><a class="text-link" href="portfolio.html">Explore my portfolio <span aria-hidden="true">↗</span></a></div>
+    <div class="footer-top"><a class="wordmark" href="index.html">minahil<span class="wordmark-dot">.</span></a><p>A little curiosity. A lot to explore.</p><a class="text-link" href="contact.html">Start a conversation <span aria-hidden="true">↗</span></a></div>
     <div class="footer-bottom"><p>© 2026 Minahil Ilyas</p><p>Information Technology · University of Hertfordshire</p><a href="#main">Back to top <span aria-hidden="true">↑</span></a></div>
   </footer>
 </body>
