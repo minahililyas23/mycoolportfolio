@@ -28,27 +28,27 @@ if (menuButton && navigation) {
 
 const form = document.querySelector('#contact-form');
 if (form) {
-  // Native constraints stay in the HTML; JS adds inline, persistent feedback.
-  form.noValidate = true;
-  const fields = ['name', 'email', 'organisation', 'subject', 'message', 'consent'];
+  // This coursework demonstration validates in the browser only.
+  // It makes no network request and does not use persistent storage.
+  const fields = ['name', 'email', 'organisation', 'subject', 'message'];
+  const controls = document.querySelector('#contact-fields');
   const summary = document.querySelector('#form-errors');
   const status = document.querySelector('#form-status');
-  const submitButton = form.querySelector('[type="submit"]');
-  const submitLabel = submitButton.querySelector('span');
   const success = document.querySelector('#form-success');
+  const heading = document.querySelector('.form-heading');
   const message = document.querySelector('#message');
-  let isSubmitting = false;
+  const messageCount = document.querySelector('#message-count');
 
-  message.addEventListener('input', () => {
-    document.querySelector('#message-count').textContent = `${message.value.length.toLocaleString('en-GB')} / 5,000`;
-  });
+  function updateMessageCount() {
+    messageCount.textContent = message.value.length.toLocaleString('en-GB') + ' / 5,000';
+  }
 
   function clearErrors() {
     summary.hidden = true;
     summary.querySelector('ul').replaceChildren();
     fields.forEach((name) => {
       document.getElementById(name).removeAttribute('aria-invalid');
-      const error = document.getElementById(`${name}-error`);
+      const error = document.getElementById(name + '-error');
       error.hidden = true;
       error.textContent = '';
     });
@@ -56,41 +56,47 @@ if (form) {
 
   function displayErrors(errors) {
     clearErrors();
-    for (const [name, message] of Object.entries(errors)) {
-      if (!fields.includes(name)) continue;
+    for (const [name, errorMessage] of Object.entries(errors)) {
       const input = document.getElementById(name);
       input.setAttribute('aria-invalid', 'true');
-      const error = document.getElementById(`${name}-error`);
-      error.textContent = message;
+      const error = document.getElementById(name + '-error');
+      error.textContent = errorMessage;
       error.hidden = false;
       const item = document.createElement('li');
       const link = document.createElement('a');
-      link.href = `#${name}`;
-      link.textContent = message;
+      link.href = '#' + name;
+      link.textContent = errorMessage;
       link.addEventListener('click', () => input.focus());
       item.append(link);
       summary.querySelector('ul').append(item);
     }
-    if (summary.querySelector('li')) {
-      summary.hidden = false;
-      summary.focus();
-    }
+    summary.hidden = false;
+    summary.focus();
   }
 
   function validate(values) {
     const errors = {};
-    if (values.name.length < 2 || values.name.length > 100) errors.name = 'Please enter your name using 2–100 characters.';
-    if (!values.email || !document.querySelector('#email').validity.valid) errors.email = 'Please enter a valid email address.';
-    if (values.organisation.length > 160) errors.organisation = 'Please use no more than 160 characters for your organisation.';
-    if (!['placement', 'collaboration', 'general'].includes(values.subject)) errors.subject = 'Please choose what you would like to discuss.';
-    if (values.message.length < 10 || values.message.length > 5000) errors.message = 'Please write a message using 10–5,000 characters.';
-    if (!values.consent) errors.consent = 'Please agree to your details being stored so this enquiry can be answered.';
+    if (values.name.length < 2 || values.name.length > 100) {
+      errors.name = 'Please enter your name using 2–100 characters.';
+    }
+    if (!values.email || !document.querySelector('#email').validity.valid) {
+      errors.email = 'Please enter a valid email address.';
+    }
+    if (values.organisation.length > 160) {
+      errors.organisation = 'Please use no more than 160 characters for your organisation.';
+    }
+    if (!['placement', 'collaboration', 'general'].includes(values.subject)) {
+      errors.subject = 'Please choose what you would like to discuss.';
+    }
+    if (values.message.length < 10 || values.message.length > 5000) {
+      errors.message = 'Please write a message using 10–5,000 characters.';
+    }
     return errors;
   }
 
-  form.addEventListener('submit', async (event) => {
+  form.addEventListener('submit', (event) => {
+    // Stop normal submission before reading any entries.
     event.preventDefault();
-    if (isSubmitting) return;
     status.textContent = '';
     const data = new FormData(form);
     const values = {
@@ -99,61 +105,47 @@ if (form) {
       organisation: String(data.get('organisation') || '').trim(),
       subject: String(data.get('subject') || ''),
       message: String(data.get('message') || '').trim(),
-      consent: document.querySelector('#consent').checked,
-      website: String(data.get('website') || ''),
     };
     const errors = validate(values);
     if (Object.keys(errors).length) {
       displayErrors(errors);
       return;
     }
+
     clearErrors();
-    isSubmitting = true;
-    submitButton.disabled = true;
-    submitLabel.textContent = 'Submitting…';
-    form.setAttribute('aria-busy', 'true');
-    const controller = new AbortController();
-    const timeout = window.setTimeout(() => controller.abort(), 20000);
-    try {
-      const response = await fetch(form.action, {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json', Accept: 'application/json' },
-        body: JSON.stringify(values),
-        signal: controller.signal,
-      });
-      const result = await response.json();
-      if (!response.ok || result.ok !== true || !result.id) {
-        if (result.errors && Object.keys(result.errors).length) displayErrors(result.errors);
-        throw new Error(result.error || 'Your message could not be submitted. Please try again.');
-      }
-      success.querySelector('.submission-reference').textContent = `Submission reference: ${result.id}`;
-      form.hidden = true;
-      document.querySelector('.form-heading').hidden = true;
-      success.hidden = false;
-      form.reset();
-      document.querySelector('#message-count').textContent = '0 / 5,000';
-      success.focus();
-    } catch (error) {
-      status.textContent = error.name === 'AbortError'
-        ? 'The connection timed out. Your message is still here. Please try again.'
-        : (error instanceof SyntaxError || error instanceof TypeError
-          ? 'The contact service could not be reached. Your message is still here. Please try again.'
-          : error.message);
-    } finally {
-      window.clearTimeout(timeout);
-      isSubmitting = false;
-      submitButton.disabled = false;
-      submitLabel.textContent = 'Send message';
-      form.removeAttribute('aria-busy');
-    }
+    form.hidden = true;
+    heading.hidden = true;
+    success.hidden = false;
+    // Keep the values so "Edit details" can restore the same entries.
+    success.focus();
   });
 
-  document.querySelector('#send-another').addEventListener('click', () => {
+  function showForm() {
     success.hidden = true;
     form.hidden = false;
-    document.querySelector('.form-heading').hidden = false;
-    status.textContent = '';
+    heading.hidden = false;
     clearErrors();
     document.querySelector('#name').focus();
+  }
+
+  document.querySelector('#edit-details').addEventListener('click', () => {
+    status.textContent = '';
+    showForm();
   });
+
+  document.querySelector('#start-again').addEventListener('click', () => {
+    form.reset();
+    updateMessageCount();
+    showForm();
+    status.textContent = 'The form has been cleared. You can start again.';
+  });
+
+  message.addEventListener('input', updateMessageCount);
+
+  // Enable only after handlers exist. With JavaScript disabled, the disabled
+  // fieldset prevents accidental submission of personal details in the URL.
+  form.noValidate = true;
+  controls.disabled = false;
+  updateMessageCount();
 }
+
